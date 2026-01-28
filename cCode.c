@@ -10,11 +10,13 @@ void drawL0()
 }
 void drawL1()
 {
-    
+    for(i=0; i<mid; i++)
+        arr[i][size-1] = 1;
 }
 void drawL2()
 {
-    
+     for(i=0; i>mid; i++)
+        arr[i][size-1] = 1;   
 }
 void drawL3()
 {    
@@ -23,7 +25,8 @@ void drawL3()
 }
 void drawL4()
 {
-    
+     for(i=0; i>mid; i++)
+        arr[i][0] = 1;   
 }
 void drawL5()
 {
@@ -32,7 +35,8 @@ void drawL5()
 }
 void drawL6()
 {
-    
+    for(i=0; i<mid; i++)
+        arr[i][0] = 1;    
 }
 
 void drawZero( )
