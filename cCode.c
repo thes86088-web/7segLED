@@ -102,7 +102,7 @@ void printMat()
     }
 }
 
-paintMat(given)
+void paintMat(given)
 {
     switch(given)
     {
