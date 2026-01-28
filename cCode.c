@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int i = 0; int j=0; 
+int i = 0; int j=0; int given = 8;
 #define size 7
 int mid = size/2;
 int arr[size][size] = {0};
@@ -101,7 +101,19 @@ void printMat()
     }
 }
 
-void paintMat(int given)
+void initMat()
+{
+    for( i=0; i<size; i++ )
+    {
+        for( j=0; j<size; j++ )
+        {
+            arr[i][j] = 0;
+        }
+    }
+}
+
+
+void paintMat()
 {
     switch(given)
     {
@@ -121,11 +133,13 @@ void paintMat(int given)
 
 int main()
 {
-    int given = 8; int t=8;
+    int t=8;
     printf("Enter a number 0-9 : ");
     scanf( "%d", &t );printf("\n");
     if(t<10) { given = t; }
 
-    paintMat(given);
-    printMat();
+    initMat();
+    paintMat();
+    printMat(); 
+    
 }
