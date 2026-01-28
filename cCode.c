@@ -2,6 +2,35 @@ int i = 0; int j=0;
 #define size 7;
 int arr[size][size] = {0};
 
+void drawL0()
+{
+    
+}
+void drawL1()
+{
+    
+}
+void drawL2()
+{
+    
+}
+void drawL3()
+{
+    
+}
+void drawL4()
+{
+    
+}
+void drawL5()
+{
+    
+}
+void drawL6()
+{
+    
+}
+
 void drawZero( )
 {
     drawL0(); drawL1(); drawL2(); drawL3(); drawL4();
