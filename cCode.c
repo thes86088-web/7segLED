@@ -104,7 +104,20 @@ void printMat()
 
 paintMat(given)
 {
-    
+    switch(given)
+    {
+        case 0 : drawZero(); break;
+        case 1 : drawOne(); break;
+        case 2 : drawTwo(); break;
+        case 3 : drawThree(); break;
+        case 4 : drawFour(); break;
+        case 5 : drawFive(); break;
+        case 6 : drawSix(); break;
+        case 7 : drawSeven(); break;
+        case 8 : drawEight(); break;
+        case 9 : drawNine(); break;
+        default : drawEight();
+    }
 }
 
 int main()
