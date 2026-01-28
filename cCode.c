@@ -17,8 +17,8 @@ void drawL1()
 }
 void drawL2()
 {
-     for(i=0; i>mid; i++)
-        arr[i][size-1] = 1;   
+     for(i=0; i<mid; i++)
+        arr[mid+i][size-1] = 1;   
 }
 void drawL3()
 {    
@@ -27,9 +27,8 @@ void drawL3()
 }
 void drawL4()
 {
-     for(i=0; i>mid; i++)
-        arr[i][0] = 1;   
-}
+    for(i=0; i<mid; i++)
+        arr[mid+i][0] = 1;   }
 void drawL5()
 {
     for(j=0; j<size; j++)
