@@ -1,3 +1,4 @@
+
 int i = 0; int j=0; 
 #define size 7
 int mid = size/2;
@@ -102,6 +103,7 @@ void printMat()
 
 int main()
 {
-    
-}
+    int given = 8;
+    printf("Enter a number 0-9 : ");
+    scanf( "%d", &given ); printf("\n");
 }
