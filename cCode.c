@@ -133,11 +133,17 @@ void paintMat()
 
 int main()
 {
-    int t=8;
-    printf("Enter a number 0-9 : ");
-    scanf( "%d", &t );printf("\n");
-    if(t<10) { given = t; }
-
+    do{
+        if( given>9 || given<0 )
+        {
+            printf("\n");
+            printf("invalid input! please try again !"); printf("\n");
+        }
+        printf("Enter a number 0-9 : ");
+        scanf( "%d", &given ); printf("\n");
+    }
+    while( given>9 || given<0 );
+    
     initMat();
     paintMat();
     printMat(); 
