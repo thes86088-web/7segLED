@@ -1,10 +1,12 @@
 int i = 0; int j=0; 
-#define size 7;
+#define size 7
+int mid = size/2;
 int arr[size][size] = {0};
 
 void drawL0()
 {
-    
+    for(j=0; j<size; j++)
+        arr[0][j] = 1;
 }
 void drawL1()
 {
@@ -15,8 +17,9 @@ void drawL2()
     
 }
 void drawL3()
-{
-    
+{    
+    for(j=0; j<size; j++)
+        arr[size-1][j] = 1;
 }
 void drawL4()
 {
@@ -24,7 +27,8 @@ void drawL4()
 }
 void drawL5()
 {
-    
+    for(j=0; j<size; j++)
+        arr[mid][j] = 1;    
 }
 void drawL6()
 {
