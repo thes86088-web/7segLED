@@ -87,7 +87,21 @@ void drawNine( )
     drawL5(); drawL6();
 }
 
+void printMat()
+{
+    for( i=0; i<size; i++ )
+    {
+        for( j=0; j<size; j++ )
+        {
+            if( arr[i][j] == 1 ) printf("*");
+            else if( arr[i][j] == 0 ) printf(" ");
+        }
+        printf("\n");
+    }
+}
+
 int main()
 {
     
+}
 }
