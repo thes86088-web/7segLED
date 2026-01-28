@@ -1,3 +1,4 @@
+#include <stdio.h>
 
 int i = 0; int j=0; 
 #define size 7
@@ -101,9 +102,18 @@ void printMat()
     }
 }
 
+paintMat(given)
+{
+    
+}
+
 int main()
 {
-    int given = 8;
+    int given = 8; int t=8;
     printf("Enter a number 0-9 : ");
-    scanf( "%d", &given ); printf("\n");
+    scanf( "%d", &t );printf("\n");
+    if(t<10) { given = t; }
+
+    paintMat(given);
+    printMat();
 }
