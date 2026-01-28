@@ -2,6 +2,10 @@ int i = 0; int j=0;
 #define size 7;
 int arr[size][size] = {0};
 
+void drawZero( )
+{
+    
+}
 void drawOne( )
 {
     
