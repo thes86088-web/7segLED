@@ -52,7 +52,7 @@ void drawOne( )
 void drawTwo( )
 {
     drawL0(); drawL1();
-    drawL3(); drawL4(); drawL5();
+    drawL3(); drawL4(); drawL5(); 
 }
 void drawThree( )
 {
@@ -62,7 +62,7 @@ void drawThree( )
 void drawFour( )
 {
     drawL1(); drawL2();
-    drawL5(); drawL6();
+    drawL5(); drawL6(); arr[size-1][size-1] = 1;
 }
 void drawFive()
 {
@@ -76,7 +76,7 @@ void drawSix( )
 }
 void drawSeven( )
 {
-    drawL0(); drawL1(); drawL2();
+    drawL0(); drawL1(); drawL2(); arr[size-1][size-1] = 1;
 }
 void drawEight( )
 {
