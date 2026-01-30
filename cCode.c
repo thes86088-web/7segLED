@@ -7,6 +7,8 @@ int mid = size/2;
 int tens[size][size] = {0};
 int ones[size][size] = {0};
 
+int canvas[screens][size][size] = { tens, ones };
+
 void drawL0( int arr[][size] )
 {
     for(j=0; j<size; j++)
@@ -154,12 +156,9 @@ int main()
     firstDigit = given/10;
     secondDigit = given%10 ;
     
-    initMat();
-    paintMat();
-    
-    initMat();
-    paintMat();
-    
-    printMat(); 
+    initMat(tens);     initMat(ones);
+    paintMat(tens);    paintMat(ones);
+ 
+    printMat(canvas); 
     
 }
