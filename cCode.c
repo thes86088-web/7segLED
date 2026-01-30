@@ -10,36 +10,36 @@ int mid = size/2;
 void drawL0()
 {
     for(j=0; j<size; j++)
-        arr[0][j] = 1;
+        arr[j] = 1;
 }
 void drawL1()
 {
     for(i=0; i<mid; i++)
-        arr[i][size-1] = 1;
+        arr[ (i*size) + size-1] = 1;
 }
 void drawL2()
 {
      for(i=0; i<mid; i++)
-        arr[mid+i][size-1] = 1;   
+        arr[size*(mid+i) + size-1] = 1;   
 }
 void drawL3()
 {    
     for(j=0; j<size; j++)
-        arr[size-1][j] = 1;
+        arr[size*(size-1)+j] = 1;
 }
 void drawL4()
 {
     for(i=0; i<mid; i++)
-        arr[mid+i][0] = 1;   }
+        arr[(mid+i)*size] = 1;   }
 void drawL5()
 {
     for(j=0; j<size; j++)
-        arr[mid][j] = 1;    
+        arr[(mid*size)+j] = 1;    
 }
 void drawL6()
 {
     for(i=0; i<mid; i++)
-        arr[i][0] = 1;    
+        arr[i*size] = 1;    
 }
 
 void drawZero( )
