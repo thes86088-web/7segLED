@@ -110,33 +110,21 @@ void printMat( int **canvas )
     }
 }
 
-void initMat( int *arr )
-{
-    for( i=0; i<Size; i++ )
-    {
-        for( j=0; j<Size; j++ )
-        {
-            arr[i][j] = 0;
-        }
-    }
-}
-
-
 void paintMat( int *arr )
 {
     switch(given)
     {
-        case 0 : drawZero( int *arr ); break;
-        case 1 : drawOne( int *arr ); break;
-        case 2 : drawTwo( int *arr ); break;
-        case 3 : drawThree( int *arr ); break;
-        case 4 : drawFour( int *arr ); break;
-        case 5 : drawFive( int *arr ); break;
-        case 6 : drawSix( int *arr ); break;
-        case 7 : drawSeven( int *arr ); break;
-        case 8 : drawEight( int *arr ); break;
-        case 9 : drawNine( int *arr ); break;
-        default : drawEight( int *arr );
+        case 0 : drawZero( arr ); break;
+        case 1 : drawOne( arr ); break;
+        case 2 : drawTwo( arr ); break;
+        case 3 : drawThree( arr ); break;
+        case 4 : drawFour( arr ); break;
+        case 5 : drawFive( arr ); break;
+        case 6 : drawSix( arr ); break;
+        case 7 : drawSeven( arr ); break;
+        case 8 : drawEight( arr ); break;
+        case 9 : drawNine( arr ); break;
+        default : drawEight( arr );
     }
 }
 
@@ -156,8 +144,7 @@ int main()
     firstDigit = given/10;
     secondDigit = given%10 ;
     
-    initMat(tens);     initMat(ones);
-    paintMat(tens);    paintMat(ones);
+    paintMat(tens, firstDigit );    paintMat(ones, secondDigit );
  
     printMat(canvas); 
     
