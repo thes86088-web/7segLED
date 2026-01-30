@@ -4,8 +4,7 @@
 int i = 0; int j=0; int given = 8;
 #define size 7
 int mid = size/2;
-
-#define arr[i][j] arr[ i*size + j ]
+int *arr = 0;
 
 void drawL0()
 {
@@ -15,7 +14,7 @@ void drawL0()
 void drawL1()
 {
     for(i=0; i<mid; i++)
-        arr[ (i*size) + size-1] = 1;
+        arr[ (i*(size) + size-1] = 1;
 }
 void drawL2()
 {
@@ -64,7 +63,7 @@ void drawThree( )
 void drawFour( )
 {
     drawL1(); drawL2();
-    drawL5(); drawL6(); arr[size-1][size-1] = 1;
+    drawL5(); drawL6(); arr[(size-1)*size + size-1] = 1;
 }
 void drawFive()
 {
@@ -78,7 +77,7 @@ void drawSix( )
 }
 void drawSeven( )
 {
-    drawL0(); drawL1(); drawL2(); arr[size-1][size-1] = 1;
+    drawL0(); drawL1(); drawL2(); arr[size*(size-1)+size-1] = 1;
 }
 void drawEight( )
 {
@@ -96,8 +95,8 @@ void printMat()
     {
         for( j=0; j<size; j++ )
         {
-            if( arr[i][j] == 1 ) printf("*");
-            else if( arr[i][j] == 0 ) printf(" ");
+            if(  arr[ i*size + j ] == 1 ) printf("*");
+            else if(  arr[ i*size + j ] == 0 ) printf(" ");
         }
         printf("\n");
     }
@@ -109,7 +108,7 @@ void initMat()
     {
         for( j=0; j<size; j++ )
         {
-            arr[i][j] = 0;
+             arr[ i*size + j ] = 0;
         }
     }
 }
@@ -135,7 +134,7 @@ void paintMat()
 
 int main()
 {
-    int *arr = calloc(sizeof(int), size) ;
+    arr = calloc(sizeof(int), size) ;
     do{
         if( given>9 || given<0 )
         {
