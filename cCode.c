@@ -9,94 +9,92 @@ int *tens = calloc(sizeof(int), Size) ;
 int *ones = calloc(sizeof(int), Size) ;
 int **canvas = calloc( sizeof(int*), screens );
 
-int canvas[screens][Size][Size] = { tens, ones };
-
-void drawL0( int arr[][Size] )
+void drawL0( int *arr )
 {
     for(j=0; j<Size; j++)
-        arr[0][j] = 1;
+        arr[j] = 1;
 }
-void drawL1( int arr[][Size] )
+void drawL1( int *arr )
 {
     for(i=0; i<mid; i++)
-        arr[i][Size-1] = 1;
+        arr[ (i*Size) + Size-1] = 1;
 }
-void drawL2( int arr[][Size] )
+void drawL2( int *arr )
 {
      for(i=0; i<mid; i++)
-        arr[mid+i][Size-1] = 1;   
+        arr[ (Size*( mid+i)) + Size-1] = 1;   
 }
-void drawL3( int arr[][Size] )
+void drawL3( int *arr )
 {    
     for(j=0; j<Size; j++)
-        arr[Size-1][j] = 1;
+        arr[ ((Size-1)*Size) + j] = 1;
 }
-void drawL4( int arr[][Size] )
+void drawL4( int *arr )
 {
     for(i=0; i<mid; i++)
-        arr[mid+i][0] = 1;   }
+        arr[ (mid+i)*Size ] = 1;   }
 
-void drawL5( int arr[][Size] )
+void drawL5( int *arr )
 {
     for(j=0; j<Size; j++)
-        arr[mid][j] = 1;    
+        arr[ (mid*Size) + j] = 1;    
 }
-void drawL6( int arr[][Size] )
+void drawL6( int *arr )
 {
     for(i=0; i<mid; i++)
-        arr[i][0] = 1;    
+        arr[i*Size] = 1;    
 }
 
-void drawZero( int arr[][Size] )
+void drawZero( int *arr )
 {
     drawL0(arr); drawL1( arr ); drawL2( arr ); drawL3( arr ); drawL4( arr );
     drawL6( arr );
 }
-void drawOne( int arr[][Size] )
+void drawOne( int *arr )
 {
     drawL1( arr ); drawL2( arr );
 }
-void drawTwo( int arr[][Size] )
+void drawTwo( int *arr )
 {
     drawL0( arr ); drawL1( arr );
     drawL3( arr ); drawL4( arr ); drawL5( arr ); 
 }
-void drawThree( int arr[][Size] )
+void drawThree( int *arr )
 {
     drawL0( arr ); drawL1( arr ); drawL2( arr ); drawL3( arr );
     drawL5( arr );
 }
-void drawFour( int arr[][Size] )
+void drawFour( int *arr )
 {
     drawL1( arr ); drawL2( arr );
-    drawL5( arr ); drawL6( arr ); arr[Size-1][Size-1] = 1;
+    drawL5( arr ); drawL6( arr ); arr[ (i*(Size-1)) + Size-1] = 1;
 }
-void drawFive( int arr[][Size] )
+void drawFive( int *arr )
 {
     drawL0( arr );
     drawL2( arr ); drawL3( arr ); 
     drawL5( arr ); drawL6( arr );
 }
-void drawSix( int arr[][Size] )
+void drawSix( int *arr )
 {
     drawL0( arr ); drawL2( arr ); drawL3( arr ); drawL4( arr ); drawL5( arr ); drawL6( arr );
 }
-void drawSeven( int arr[][Size] )
+void drawSeven( int *arr )
 {
-    drawL0( arr ); drawL1( arr ); drawL2( arr ); arr[Size-1][Size-1] = 1;
+    drawL0( arr ); drawL1( arr ); drawL2( arr ); arr[ (i*(Size-1)) + Size-1] = 1;
 }
-void drawEight( int arr[][Size] )
+void drawEight( int *arr )
 {
     drawL0( arr ); drawL1( arr ); drawL2( arr ); drawL3( arr );
     drawL4( arr ); drawL5( arr ); drawL6( arr );
 }
-void drawNine( int arr[][Size] )
+void drawNine( int *arr )
 {
     drawL0( arr ); drawL1( arr ); drawL2( arr ); drawL3( arr );
     drawL5( arr ); drawL6( arr );
 }
 
-void printMat( int canvas[][Size][Size] )
+void printMat( int **canvas )
 {
     for( i=0; i<Size; i++ )
     { 
@@ -104,15 +102,15 @@ void printMat( int canvas[][Size][Size] )
         {    printf("\t");
             for( j=0; j<Size; j++ )
             {
-                if( arr[k][i][j] == 1 ) printf("*");
-                else if( arr[k][i][j] == 0 ) printf(" ");
+                if( canvas[ ((k*screen) + i)*Size + j] == 1 ) printf("*");
+                else if( canvas[ ((k*screen) + i)*Size + j] == 0 ) printf(" ");
             }
         }
         printf("\n");
     }
 }
 
-void initMat( int arr[][Size] )
+void initMat( int *arr )
 {
     for( i=0; i<Size; i++ )
     {
@@ -124,21 +122,21 @@ void initMat( int arr[][Size] )
 }
 
 
-void paintMat( int arr[][Size] )
+void paintMat( int *arr )
 {
     switch(given)
     {
-        case 0 : drawZero( int arr[][Size] ); break;
-        case 1 : drawOne( int arr[][Size] ); break;
-        case 2 : drawTwo( int arr[][Size] ); break;
-        case 3 : drawThree( int arr[][Size] ); break;
-        case 4 : drawFour( int arr[][Size] ); break;
-        case 5 : drawFive( int arr[][Size] ); break;
-        case 6 : drawSix( int arr[][Size] ); break;
-        case 7 : drawSeven( int arr[][Size] ); break;
-        case 8 : drawEight( int arr[][Size] ); break;
-        case 9 : drawNine( int arr[][Size] ); break;
-        default : drawEight( int arr[][Size] );
+        case 0 : drawZero( int *arr ); break;
+        case 1 : drawOne( int *arr ); break;
+        case 2 : drawTwo( int *arr ); break;
+        case 3 : drawThree( int *arr ); break;
+        case 4 : drawFour( int *arr ); break;
+        case 5 : drawFive( int *arr ); break;
+        case 6 : drawSix( int *arr ); break;
+        case 7 : drawSeven( int *arr ); break;
+        case 8 : drawEight( int *arr ); break;
+        case 9 : drawNine( int *arr ); break;
+        default : drawEight( int *arr );
     }
 }
 
