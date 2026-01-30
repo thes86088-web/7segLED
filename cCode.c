@@ -1,13 +1,10 @@
 #include <stdio.h>
-#include <stlib.h>
+#include <stdlib.h>
 
 int i = 0; int j=0; int given = 88;
 #define Size 7
 #define screens 2
 int mid = Size/2;
-int *tens = calloc(sizeof(int), Size) ;
-int *ones = calloc(sizeof(int), Size) ;
-int **canvas = calloc( sizeof(int*), screens );
 
 void drawL0( int *arr )
 {
@@ -102,15 +99,15 @@ void printMat( int **canvas )
         {    printf("\t");
             for( j=0; j<Size; j++ )
             {
-                if( canvas[ ((k*screen) + i)*Size + j] == 1 ) printf("*");
-                else if( canvas[ ((k*screen) + i)*Size + j] == 0 ) printf(" ");
+                if( canvas[k][ i*Size + j] == 1 ) printf("*");
+                else if( canvas[k][ i*Size + j] == 0 ) printf(" ");
             }
         }
         printf("\n");
     }
 }
 
-void paintMat( int *arr )
+void paintMat( int *arr, int given )
 {
     switch(given)
     {
@@ -130,6 +127,10 @@ void paintMat( int *arr )
 
 int main()
 {
+    int *tens = calloc(sizeof(int), Size) ;
+    int *ones = calloc(sizeof(int), Size) ;
+    int **canvas = calloc( sizeof(int*), screens );
+    
     do{
         if( given>99 || given<0 )
         {
@@ -141,8 +142,8 @@ int main()
     }
     while( given>99 || given<0 );
 
-    firstDigit = given/10;
-    secondDigit = given%10 ;
+    int firstDigit = given/10;
+    int secondDigit = given%10 ;
     
     paintMat(tens, firstDigit );    paintMat(ones, secondDigit );
  
