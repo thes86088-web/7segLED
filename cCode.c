@@ -1,9 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int i = 0; int j=0; int given = 8;
 #define size 7
 int mid = size/2;
-int arr[size][size] = {0};
+
+#define arr[i][j] arr[ i*size + j ]
 
 void drawL0()
 {
@@ -133,6 +135,7 @@ void paintMat()
 
 int main()
 {
+    int *arr = calloc(sizeof(int), size) ;
     do{
         if( given>9 || given<0 )
         {
