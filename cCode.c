@@ -91,7 +91,7 @@ void drawNine( int *arr )
     drawL5( arr ); drawL6( arr );
 }
 
-void printMat( int **canvas )
+void printMat( int *canvas )
 {
     for( i=0; i<Size; i++ )
     { 
@@ -99,8 +99,8 @@ void printMat( int **canvas )
         {    printf("\t");
             for( j=0; j<Size; j++ )
             {
-                if( canvas[k][ i*Size + j] == 1 ) printf("*");
-                else if( canvas[k][ i*Size + j] == 0 ) printf(" ");
+                if( canvas[ (((k*screens) +i)*Size) + j] == 1 ) printf("*");
+                else if( canvas[ (((k*screens) +i)*Size) + j] == 0 ) printf(" ");
             }
         }
         printf("\n");
@@ -127,9 +127,9 @@ void paintMat( int *arr, int given )
 
 int main()
 {
-    int *tens = calloc(sizeof(int), Size) ;
-    int *ones = calloc(sizeof(int), Size) ;
-    int **canvas = calloc( sizeof(int*), screens );
+    int *canvas = calloc( sizeof(int), screens*Size*Size ) ;
+    int *tens = canvas;
+    int *ones = canvas + (Size*Size) ;
     
     do{
         if( given>99 || given<0 )
