@@ -92,6 +92,7 @@ void printMat()
 {
     for( i=0; i<size; i++ )
     {
+        printf("\t");
         for( j=0; j<size; j++ )
         {
             if( arr[i][j] == 1 ) printf("*");
