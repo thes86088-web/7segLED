@@ -48,6 +48,7 @@ void drawZero( )
 void drawOne( )
 {
     drawL1(); drawL2();
+    arr[size-1][size-1] = 1 ;
 }
 void drawTwo( )
 {
