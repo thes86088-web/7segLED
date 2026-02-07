@@ -17,7 +17,7 @@ void drawL1()
 }
 void drawL2()
 {
-     for(i=0; i<mid; i++)
+     for(i=0; i<=mid; i++)
         arr[mid+i][size-1] = 1;   
 }
 void drawL3()
@@ -48,7 +48,7 @@ void drawZero( )
 void drawOne( )
 {
     drawL1(); drawL2();
-    arr[size-1][size-1] = 1 ;
+    //arr[size-1][size-1] = 1 ;
 }
 void drawTwo( )
 {
@@ -63,7 +63,7 @@ void drawThree( )
 void drawFour( )
 {
     drawL1(); drawL2();
-    drawL5(); drawL6(); arr[size-1][size-1] = 1;
+    drawL5(); drawL6(); //arr[size-1][size-1] = 1;
 }
 void drawFive()
 {
@@ -77,7 +77,7 @@ void drawSix( )
 }
 void drawSeven( )
 {
-    drawL0(); drawL1(); drawL2(); arr[size-1][size-1] = 1;
+    drawL0(); drawL1(); drawL2(); //arr[size-1][size-1] = 1;
 }
 void drawEight( )
 {
